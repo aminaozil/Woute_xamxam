@@ -1,0 +1,23 @@
+<!doctype html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>BLOG WOUTE XAM-XAM</title>
+    
+    
+   </head>
+
+  <body class="pt-20 pl-20 pr-20 font-serif ">
+    {% include "partials/nav.html" %}
+    <div>
+        {% block  content %}
+         
+            
+        {% endblock  %}
+    </div>
+  </body>
+</html>
