@@ -16,3 +16,6 @@ def details_articles(request):
 
 def update_articles(request):
     return render(request, "articles/update_article.html")
+
+def delete_articles(request):
+    return render(request, "articles/delete_article.html")
