@@ -3,35 +3,9 @@
 {% block content %}
     <div  class="bg-white shadow-md max-w-sm mx-auto border border-gray-400 rounded-2xl m-20 pb-10 pt-10 pr-10 pl-10">    
         <h3 class="text-center font-bold mb-6">NOUVEAU ARTICLE</h3>
-        <form method="">
+        <form method="POST" >
         {% csrf_token %}
-            <div>
-                <label for="categorie" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CATEGORIE</label>
-                <select id="categorie" name="categorie" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]">
-                    <option selected class="text-gray-100">Choisissez une catégorie</option>
-                    <option value="DEVELOPPEMENT WEB">DEVELOPPEMENT WEB</option>
-                    <option value="MARKETING DIGITAL">MARKETING DIGITAL</option>
-                    <option value="DEVELOPPEMENT MOBILE">DEVELOPPEMENT MOBILE</option>
-                  </select>
-            </div>
-            
-            <div>
-                <label for="titre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">TITRE</label>
-                <input type="text" name="titre" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]">
-            </div>
-            <div>
-                <label for="img" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">IMAGE</label>
-                <input type="text" name="img" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]">
-            </div>
-            <div>
-                <label for="resume" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">RESUME</label>
-                <input type="text" name="price" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]">
-            </div>
-            <div>           
-                <label for="contenu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CONTENU</label>
-                <textarea name="description" rows="4" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]" placeholder="Mettez le contenu de l'article..."></textarea>
-            </div>
-            
+            {{ form.as_p }}  
             <button 
             type="submit" 
             class="mt-6 text-white bg-[#4a355b] hover:bg-[#4a355b]-300 focus:ring-4 focus:outline-none focus:ring-[#4a355b]-300 font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-[#4a355b]-600 dark:hover:bg-[#4a355b]-700 dark:focus:ring-[#4a355b]-800 ">
