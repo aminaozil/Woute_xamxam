@@ -15,7 +15,7 @@ def login_form(request):
             login(request, user)
             return redirect("/list_articles/")
         else: 
-            messages.error(request, 'Nom d\'utilisateur ou mot de passe incorrect.')
+            messages.error(request, "Nom d\'utilisateur ou mot de passe incorrect.")
     return render(request, "utilisateurs/login.html")
 
 def register_form(request):

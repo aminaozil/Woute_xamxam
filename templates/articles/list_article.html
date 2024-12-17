@@ -1,12 +1,20 @@
 
 {% extends "partials/base.html" %}
 {% block content %}
-    <div class="pt-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-4">  
+{% if request.user.is_authenticated %}
+<button class="mt-10 ml-10 relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        <a href="{% url "add_articles" %}"> Nouvelle article</a>
+    </span>
+</button> 
+{% endif %} 
+    <div class="pt-10 pr-10 pl-10 grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-4"> 
+        
         {% if articles %}
 
         {% for  article in articles %}
-            <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full rounded-t-lg h-80 md:h-auto md:w-40 md:rounded-none md:rounded-s-lg" src="{{ article.img.url }}" alt="{{article.titre}}">
+            <a href="{% url "details_articles" article.id %}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-scale-down w-full rounded-t-lg h-80 md:h-auto md:w-40 md:rounded-none md:rounded-s-lg" src="{{ article.img.url }}" alt="{{article.titre}}">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ article.titre }}</h5>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ article.resume }}</p>

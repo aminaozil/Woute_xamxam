@@ -1,0 +1,208 @@
+{% extends "partials/base.html" %}
+
+{% block  content %}
+{% load static %}
+    <div>
+        <section class="bg-cover bg-no-repeat bg-[url('{% static 'images/blog.jpeg' %}')] bg-gray-700 bg-blend-multiply">
+            <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Bienvenue sur WOUTE XAM-XAM</h1>
+                <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"> Votre partenaire pour l'apprentissage de l'informatique ! Vous pouvez suivre nos cours en ligne à votre propre rythme, avec des vidéos, des quiz, des forums de discussion et des ressources téléchargeables. Plus de contraintes de temps ou de lieu !</p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                    <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#4a355b] hover:bg-[#4a355b] focus:ring-4 focus:ring-[#4a355b] dark:focus:ring-[#4a355b]">
+                        Plus de cours
+                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                      
+                </div>
+            </div>
+        </section>
+        <div class="p-5 grid grid-cols-5 gap-4">
+
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">LARAVEL</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de LARAVEL pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">Django</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de LARAVEL pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">Analyse de données</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de LARAVEL pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">DJANGO</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de DJANGO pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">INTELLIGENCE ARTIFICIELLES</div>
+                <p class="text-gray-700 text-base">
+                    L'IA et machines learning. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">PHP</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de PHP pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">JAVA</div>
+                <p class="text-gray-700 text-base">
+                    Les bases de JAVA pour les débutant. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">DEVENIR UN BON DEVELOPPEUR</div>
+                <p class="text-gray-700 text-base">
+                    Comment faire pour devenir un bon développeur ?. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">C++</div>
+                <p class="text-gray-700 text-base">
+                    Les Avantages de C++ et comment le faire. 
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+            <div class="max-w-48 rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <div class="px-2 py-1">
+                <div class="font-bold text-lg mb-2 text-[#4a355b]">MARKETING DIGITAL</div>
+                <p class="text-gray-700 text-base">
+                    Comment booster la visibilité d'un entreprise.
+                </p>
+                </div>
+                <div class="px-2 pt-4 pb-2 flex flex-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-1 py-1 text-3  text-gray-700 mr-2 mb-2">Cours</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-1  text-gray-700 mr-2 mb-2   flex items-center">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                        </svg>
+                        45 H
+                    </span>
+                </div>
+            </div>
+
+       </div>
+    </div>
+{% include "partials/footer.html" %} 
+{% endblock %}

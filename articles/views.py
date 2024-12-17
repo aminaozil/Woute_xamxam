@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 from articles.models import Article
 from .forms import AddArticle
@@ -7,14 +8,14 @@ from .forms import AddArticle
 def home(request):
     return render(request, "home.html")
 
-
+@login_required(login_url="connexion")
 def add_articles(request):
     form = AddArticle(request.POST, request.FILES)
     if request.method == "POST":
         
         auteur = request.user
         categorie = request.POST['categorie']
-        img = request.POST['img']
+        img = request.FILES['img']
         titre = request.POST['titre']
         resume = request.POST['resume']
         contenu = request.POST['contenu']
@@ -34,14 +35,46 @@ def add_articles(request):
     return render(request, "articles/add_article.html", {"form":form})
 
 def list_articles(request):
-    articles = Article.objects.all()
+    articles = Article.objects.filter(archive=False)
     return render(request, "articles/list_article.html", {"articles": articles})
 
-def details_articles(request):
-    return render(request, "articles/details_article.html")
 
-def update_articles(request):
-    return render(request, "articles/update_article.html")
+def details_articles(request, id):
+    articles = get_object_or_404(Article, id=id)
 
-def delete_articles(request):
-    return render(request, "articles/delete_article.html")
+    dernieres = Article.objects.filter(archive=False).order_by("id")[:3]
+    context={
+        "articles": articles,
+        "dernieres": dernieres
+
+    }
+    return render(request, "articles/details_article.html", context)
+
+@login_required(login_url="connexion")
+def update_articles(request, id):      
+    articles = Article.objects.get(id=id)
+    form = AddArticle(request.POST or None, instance=articles)
+    print(form)
+    if form.is_valid():
+        form.save()
+        return redirect('/list_articles/')
+     
+    return render(request, "articles/update_article.html", {"form": form})
+
+@login_required(login_url="connexion")
+def delete_articles(request, id):
+    articles = get_object_or_404(Article, id=id)
+    if request.method == "POST":
+        del_articles = Article.objects.filter(pk=articles.id)
+        del_articles.update(
+            archive = True
+            
+        )
+        redirect("/list_articles/")
+
+    return render(request, "articles/delete_article.html", {"articles": articles})
+
+def derniere_articles(request):
+    dernieres = Article.objects.filter(archive=False).order_by("id")[:3]
+
+    return render(request, "articles/derniere_articles.html", {"dernieres": dernieres})

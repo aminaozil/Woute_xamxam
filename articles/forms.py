@@ -7,7 +7,7 @@ class AddArticle(forms.ModelForm):
     categorie_select = [
                     ("DEVELOPPEMENT WEB", "DEVELOPPEMENT WEB"), 
                     ("MARKETING DIGITAL", "MARKETING DIGITAL"), 
-                    ("DEVELOPPEMENT WEB", "DEVELOPPEMENT WEB"), 
+                    ("DEVELOPPEMENT MOBILE", "DEVELOPPEMENT MOBILE"), 
     ]
     categorie = forms.ChoiceField(choices=categorie_select, widget=forms.Select(
                                             attrs={
@@ -23,7 +23,7 @@ class AddArticle(forms.ModelForm):
                             attrs={
                                 "class":"block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]"
                                 }))
-    contenu = forms.CharField(max_length=255, widget=forms.TextInput(
+    contenu = forms.CharField(widget=forms.Textarea(
                             attrs={
                                 "class":"block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]"
                                 }))
