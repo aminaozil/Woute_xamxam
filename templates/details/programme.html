@@ -3,7 +3,7 @@
 {% block  content %}
 {% load static %}
     <div>
-        <section class="bg-cover bg-no-repeat bg-[url('{% static 'images/blog.jpeg' %}')] bg-gray-700 bg-blend-multiply">
+        <section class="bg-cover bg-no-repeat bg-[url('{% static 'images/datas.jpeg' %}')] bg-gray-700 bg-blend-multiply">
             <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
                 <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Bienvenue sur WOUTE XAM-XAM</h1>
                 <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48"> Votre partenaire pour l'apprentissage de l'informatique ! Vous pouvez suivre nos cours en ligne à votre propre rythme, avec des vidéos, des quiz, des forums de discussion et des ressources téléchargeables. Plus de contraintes de temps ou de lieu !</p>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full" src="{% static 'images/blog.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">Django</div>
                 <p class="text-gray-700 text-base">
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full h-32" src="{% static 'images/code.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">DJANGO</div>
                 <p class="text-gray-700 text-base">
@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full h-32" src="{% static 'images/digital.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">INTELLIGENCE ARTIFICIELLES</div>
                 <p class="text-gray-700 text-base">
@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full" src="{% static 'images/datas.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">PHP</div>
                 <p class="text-gray-700 text-base">
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full h-32" src="{% static 'images/code.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">DEVENIR UN BON DEVELOPPEUR</div>
                 <p class="text-gray-700 text-base">
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <div class="max-w-48 rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="{% static 'images/flyers.jpeg' %}" alt="Sunset in the mountains">
+                <img class="w-full" src="{% static 'images/mobile.jpeg' %}" alt="Sunset in the mountains">
                 <div class="px-2 py-1">
                 <div class="font-bold text-lg mb-2 text-[#4a355b]">C++</div>
                 <p class="text-gray-700 text-base">
@@ -204,5 +204,6 @@
 
        </div>
     </div>
+    {% include "partials/contact.html" %} 
 {% include "partials/footer.html" %} 
 {% endblock %}

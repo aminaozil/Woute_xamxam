@@ -7,3 +7,6 @@ def propos(request):
 
 def programmes(request):
     return render(request, "details/programme.html")
+
+def contact(request):
+    return render(request, "details/contact.html")

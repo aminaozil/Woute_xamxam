@@ -1,0 +1,45 @@
+{% extends "partials/base.html" %}
+
+{% block  content %}
+{% load static %}
+<div class="flex md:flex-row-reverse flex-wrap pt-10 bg-cover bg-no-repeat bg-[url('{% static 'images/blog.jpeg' %}')] bg-gray-700 bg-blend-multiply mb-24 mt-24">
+    <div class="w-full md:w-3/4  p-4 text-gray-200 mb-5">
+        <h3 class="text-center mt-5 font-bold text-white"><h3 class="text-center font-bold mb-4">CONTACT</h3>
+        <div  class=" max-w-sm mx-auto">    
+            <form method="POST" action="{% url "connexion" %}">
+            {% csrf_token %}
+                <div class="mb-5">
+                   
+                    <input type="text" name="sujet" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-900 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]"  placeholder="Sujet" >
+                </div>
+                <div class="mb-5">
+                  
+                    <input type="email" name="email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-[#4a355b] focus:border-[#4a355b] dark:bg-[#4a355b] dark:border-[#4a355b] dark:placeholder-gray-700 dark:text-white dark:focus:ring-[#4a355b] dark:focus:border-[#4a355b]" placeholder="Votre adresse email" >
+                </div>
+                <div>
+                  
+                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-700 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Votre message..." ></textarea>
+                
+                </div>
+                
+                <button 
+                type="submit" 
+                class="mt-6 text-[#6b21a8] bg-white hover:bg-[#6b21a8] hover:text-white focus:ring-4 focus:outline-none focus:ring-[#6b21a8] font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-[#6b21a8] dark:hover:bg-[#6b21a8] dark:focus:ring-[#6b21a8] ">
+                Envoyer
+                </button>
+                
+                 
+          </form>
+         
+        </div>
+    
+    
+    </div>
+    <div class="w-full md:w-1/4  p-4 text-center text-white">
+        <p class="mt-6 font-bold text-xl">Vous pouvez nous Envoyer vos questions.<br> Ouvert H24 ; 7/7</p><br>
+        <p class="font-bold text-lg" >(221) 774568956 / 789541236 / 765632578 </p>
+
+    </div>
+
+</div>
+{% endblock %}

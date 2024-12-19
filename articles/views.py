@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-
+from django.core.paginator import Paginator
 from articles.models import Article
 from .forms import AddArticle
 
@@ -36,7 +36,17 @@ def add_articles(request):
 
 def list_articles(request):
     articles = Article.objects.filter(archive=False)
-    return render(request, "articles/list_article.html", {"articles": articles})
+    #pour la pagination
+    paginator = Paginator(articles, 6)
+    page_number = request.GET.get("page")
+    page = paginator.get_page(page_number)
+
+    #pour le bouton recherche
+    if request.method == "GET":
+        name = request.GET.get("recherche")
+        if name is not None:
+            articles = Article.objects.filter(categorie__icontains=name)
+    return render(request, "articles/list_article.html", {"articles": articles, "page":page})
 
 
 def details_articles(request, id):
