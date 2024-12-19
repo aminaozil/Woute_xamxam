@@ -38,15 +38,15 @@ def list_articles(request):
     articles = Article.objects.filter(archive=False)
     #pour la pagination
     paginator = Paginator(articles, 6)
-    page_number = request.GET.get("page")
-    page = paginator.get_page(page_number)
-
+    page = request.GET.get('page')
+    arts = paginator.get_page(page)
     #pour le bouton recherche
     if request.method == "GET":
         name = request.GET.get("recherche")
         if name is not None:
             articles = Article.objects.filter(categorie__icontains=name)
-    return render(request, "articles/list_article.html", {"articles": articles, "page":page})
+            
+    return render(request, "articles/list_article.html", {"articles": articles, "arts":arts})
 
 
 def details_articles(request, id):
@@ -85,6 +85,6 @@ def delete_articles(request, id):
     return render(request, "articles/delete_article.html", {"articles": articles})
 
 def derniere_articles(request):
-    dernieres = Article.objects.filter(archive=False).order_by("id")[:3]
+    dernieres = Article.objects.filter(archive=False).order_by("date_updated")[:3]
 
     return render(request, "articles/derniere_articles.html", {"dernieres": dernieres})

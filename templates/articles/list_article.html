@@ -12,9 +12,10 @@
         
         {% if articles %}
 
-        {% for  article in articles %}
+        {% for  article in arts %}
         
             <a href="{% url "details_articles" article.id %}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                {{ article.full_name|upper }}<br>
                 <img class="object-cover  h-64 md:w-40  rounded-s-lg" src="{{ article.img.url }}" alt="{{article.titre}}">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <ul class="list-disc pl-5">
@@ -25,37 +26,49 @@
                     <p class="mb-3 font-normal text-gray-500 dark:text-gray-500"><span class="text-black">Par</span> {{ article.auteur }} - {{article.date_creation}}</p>
                 </div>
             </a>
+            
         {% endfor %}
-        {% for articles in page %}
-    {# Each "contact" is a Contact model object. #}
-        {{ articles.full_name|upper }}<br>
-    
-    {% endfor %}
+        
+        <nav aria-label="Page navigation example">
+            <ul class="inline-flex -space-x-px text-sm">
+                    {% if arts.has_previous %}
+                    <li>
+                        <a href="?page={{ arts.previous_page_number }}" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-[#4a355b] rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Précédant</a>
+                      </li>
+                      <li>
+                        <a href="?page=1" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                      </li>
+                        
+                    {% endif %}
+            
+                    
+                    <li>
+                        <a href="" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-[#4a355b] dark:hover:text-[#4a355b]"> {{ arts.paginator.num_pages }}</a>
+                    </li>
+            
+                    {% if arts.has_next %}
+                    <li>
+                        <a href="?page={{ arts.next_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Suivant</a>
+                    </li>
+                    <li>
+                        <a href="?page={{ arts.paginator.num_pages }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] rounded-e-lg hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Dernier</a>
+                    </li>
+                        
+                    {% endif %}
+        </ul>
+    </nav>
+            
 
-        <div class="pagination">
-            <span class="step-links">
-                {% if page.has_previous %}
-                    <a href="?page=1">&laquo; first</a>
-                    <a href="?page={{ page.previous_page_number }}">previous</a>
-                {% endif %}
 
-                <span class="current">
-                    Page {{ page.number }} of {{ page.paginator.num_pages }}.
-                </span>
-
-                {% if page.has_next %}
-                    <a href="?page={{ page.next_page_number }}">next</a>
-                    <a href="?page={{ page.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            </span>
-        </div>
+  
+  
         
         {% else %}
           <p> pas d'articles</p>
         {% endif %}            
             
     </div>   
-    {% include "partials/contact.html" %}      
+    {% include "details/contact.html" %}      
     {% include "partials/footer.html" %} 
 {% endblock %}
         

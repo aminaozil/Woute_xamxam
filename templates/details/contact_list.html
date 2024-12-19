@@ -1,0 +1,38 @@
+{% extends "partials/base.html" %}
+
+{% block content %}
+<div class="pl-11 pt-10 pr-10">
+    <h1 class="font text-2xl mb-4 text-[#4a355b] text-center underline">QUESTIONS</h1>
+
+    
+    
+    <table class="border-collapse border border-slate-300 inline-table w-full">
+        <thead>
+          <tr>
+            
+            <th class="border border-slate-300 px-4 py-2 bg-[#4a355b] text-white text-left">SUJET</th>
+            <th class="border border-slate-300 px-4 py-2 bg-[#4a355b] text-white text-left">EMAIL</th>
+            <th class="border border-slate-300 px-4 py-2 bg-[#4a355b] text-white text-left">DESCRIPTION</th>
+            
+           
+          </tr>
+        </thead>
+        {% for contact in contacts %}
+        <tbody>
+          <tr>
+            <td class="border border-slate-300 px-4 py-2 "><a class="hover:text-[#4a355b]" >{{contact.sujet}}</a></td>
+            <td class="border border-slate-300 px-4 py-2"><a class="hover:text-[#4a355b]" >{{contact.email}}</a></td>
+            <td class="border border-slate-300 px-4 py-2"><a class="hover:text-[#4a355b]" >{{contact.description}}</a></td>
+           
+            
+          </tr>
+        </tbody>
+        {% endfor %} 
+        
+      </table>
+      
+      
+
+     
+
+{% endblock %}
