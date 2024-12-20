@@ -28,8 +28,8 @@
             </a>
             
         {% endfor %}
-        
-        <nav aria-label="Page navigation example">
+    </div>   
+        <nav aria-label="Page navigation example" class="pt-10 text-center">
             <ul class="inline-flex -space-x-px text-sm">
                     {% if arts.has_previous %}
                     <li>
@@ -67,7 +67,7 @@
           <p> pas d'articles</p>
         {% endif %}            
             
-    </div>   
+    
     {% include "details/contact.html" %}      
     {% include "partials/footer.html" %} 
 {% endblock %}

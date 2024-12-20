@@ -34,9 +34,10 @@ def contact(request):
         
         contact.save()
         
-        redirect("/contact/")
+       
         
     return render(request, "details/contact.html")
+
 
 @login_required(login_url="connexion")
 def list_contact(request):

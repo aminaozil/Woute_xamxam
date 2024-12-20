@@ -1,5 +1,5 @@
 {% extends "partials/base.html" %}
-
+{% load static %}
 {% block content %}
     <div class="grid grid-cols-3 sm:grid-cols-1 pt-10 pr-10 pl-10 ">
         
@@ -8,7 +8,7 @@
             <h1 class="text-2xl text-center pb-5 text-[#4a355b]">{{articles.categorie}}</h1>
             
             <div class="flex flex-col-1  pb-1">
-                <img class="w-16 h-16 mb-3 rounded-full shadow-lg" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="Bonnie image"/>
+                <img class="w-16 h-16 mb-3 rounded-full shadow-lg" src="{% static 'images/profile.jpg' %}" alt="Bonnie image"/>
                 <div class="mt-6 pl-1">
                     <span class="text-sm text-gray-500 dark:text-gray-400">Publié le {{articles.date_creation}}</span>
                     <p class="text-sm font-medium text-gray-900 dark:text-white"> <span class="text-sm text-gray-500 dark:text-gray-400">Par</span> {{articles.auteur}}</p>   

@@ -6,7 +6,7 @@
     <div class="w-full md:w-3/4  p-4 text-gray-200 mb-5">
         <h3 class="text-center mt-5 font-bold text-white"><h3 class="text-center font-bold mb-4">CONTACT</h3>
         <div  class=" max-w-sm mx-auto">    
-            <form method="POST" action="{% url "contact" %}">
+            <form method="POST" action="{% url "contacts" %}">
             {% csrf_token %}
            
                 <div class="mb-5">
@@ -28,8 +28,9 @@
                 class="mt-6 text-[#6b21a8] bg-white hover:bg-[#6b21a8] hover:text-white focus:ring-4 focus:outline-none focus:ring-[#6b21a8] font-medium rounded-lg text-sm w-full sm:w-full px-5 py-2.5 text-center dark:bg-[#6b21a8] dark:hover:bg-[#6b21a8] dark:focus:ring-[#6b21a8] ">
                 Envoyer
                 </button>
-                
-                 
+                {% if request.user.is_authenticated %}
+                <a href="{% url "contact" %}" class="text-[#6b21a8]"> Voir la liste des questions</a>
+                {% endif %}
           </form>
          
         </div>

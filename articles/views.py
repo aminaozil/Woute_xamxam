@@ -44,7 +44,7 @@ def list_articles(request):
     if request.method == "GET":
         name = request.GET.get("recherche")
         if name is not None:
-            articles = Article.objects.filter(categorie__icontains=name)
+            arts= Article.objects.filter(categorie__icontains=name)
             
     return render(request, "articles/list_article.html", {"articles": articles, "arts":arts})
 
