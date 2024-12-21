@@ -14,7 +14,7 @@ def add_articles(request):
     if request.method == "POST":
         
         auteur = request.user
-        categorie = request.POST['categorie']
+        categorie_id = request.POST['categorie']
         img = request.FILES['img']
         titre = request.POST['titre']
         resume = request.POST['resume']
@@ -22,7 +22,7 @@ def add_articles(request):
 
         articles = Article.objects.create(
             auteur = auteur,
-            categorie = categorie,
+            categorie_id = categorie_id,
             img = img,
             titre = titre,
             resume = resume,
