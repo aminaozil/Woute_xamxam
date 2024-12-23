@@ -23,8 +23,7 @@ class Article(models.Model):
         return f"{self.titre}"
     
 
-    # class Meta:
-    #     ordering = ['date_updated']
+
 
     
 

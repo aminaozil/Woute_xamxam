@@ -26,6 +26,7 @@ class AddArticle(forms.ModelForm):
                                 }))
 
     class Meta:
+        ordering = ['date_updated']
         model = Article
         fields = ("categorie", "titre", "img", "resume", "contenu")
        
