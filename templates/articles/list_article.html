@@ -12,7 +12,7 @@
         
         {% if articles %}
 
-        {% for  article in arts %}
+        {% for  article in articles %}
         
             <a href="{% url "details_articles" article.id %}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 {{ article.full_name|upper }}<br>
@@ -31,9 +31,9 @@
     </div>   
         <nav aria-label="Page navigation example" class="pt-10 text-center">
             <ul class="inline-flex -space-x-px text-sm">
-                    {% if arts.has_previous %}
+                    {% if articles.has_previous %}
                     <li>
-                        <a href="?page={{ arts.previous_page_number }}" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-[#4a355b] rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Précédant</a>
+                        <a href="?page={{ articles.previous_page_number }}" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-[#4a355b] rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Précédant</a>
                       </li>
                       <li>
                         <a href="?page=1" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
@@ -46,12 +46,12 @@
                         <a href="" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-[#4a355b] dark:hover:text-[#4a355b]"> {{ arts.paginator.num_pages }}</a>
                     </li>
             
-                    {% if arts.has_next %}
+                    {% if articles.has_next %}
                     <li>
-                        <a href="?page={{ arts.next_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Suivant</a>
+                        <a href="?page={{ articles.next_page_number }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Suivant</a>
                     </li>
                     <li>
-                        <a href="?page={{ arts.paginator.num_pages }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] rounded-e-lg hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Dernier</a>
+                        <a href="?page={{ articles.paginator.num_pages }}" class="flex items-center justify-center px-3 h-8 leading-tight text-[#4a355b] bg-white border border-[#4a355b] rounded-e-lg hover:bg-gray-100 hover:text-[#4a355b] dark:bg-gray-800 dark:border-gray-700 dark:text-[#4a355b] dark:hover:bg-gray-700 dark:hover:text-[#4a355b]">Dernier</a>
                     </li>
                         
                     {% endif %}

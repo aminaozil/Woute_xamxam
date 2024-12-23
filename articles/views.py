@@ -39,14 +39,14 @@ def list_articles(request):
     #pour la pagination
     paginator = Paginator(articles, 6)
     page = request.GET.get('page')
-    arts = paginator.get_page(page)
+    articles = paginator.get_page(page)
     #pour le bouton recherche
     if request.method == "GET":
         name = request.GET.get("recherche")
         if name is not None:
-            arts= Article.objects.filter(categorie__icontains=name)
+            articles= Article.objects.filter(categorie__icontains=name)
             
-    return render(request, "articles/list_article.html", {"articles": articles, "arts":arts})
+    return render(request, "articles/list_article.html", {"articles": articles})
 
 
 def details_articles(request, id):
