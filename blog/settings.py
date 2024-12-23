@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_nr%it6=y4x5prtit3)4)nhe=%xos%f@+7ki^sx@i%kcxr$xl2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [ "127.0.0.1" , "localhost" , "Amina15.pythonanywhere.com" ] 
@@ -128,13 +128,13 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/static')  # dossier static pour les fichiers js, img, css
+    os.path.join(BASE_DIR, 'templates/static')  
 ]
 STATICFILES_STORAGE = "Whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'images/')
-# MEDIA_ROOT=os.path.join(BASE_DIR,"media/")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
